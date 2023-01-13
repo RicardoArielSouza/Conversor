@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Conversor</string>
+    <string name="input_text_temperature">Informe a temperatura</string>
+    <string name="celsiusText">ºC</string>
+    <string name="fahrenheitText">ºF</string>
+    <string name="kelvinText">K</string>
 </resources>
