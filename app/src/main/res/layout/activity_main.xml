@@ -6,23 +6,83 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/bannerTemperature"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:adjustViewBounds="false"
+        android:contentDescription="@string/tempConverterBannerDescription"
+        android:scaleType="fitXY"
+        android:src="@drawable/banner_temperature"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/temperatureInput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="64dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/convertButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bannerTemperature">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/input_text_temperature" />
+            android:hint="@string/input_text_temperature"
+            android:inputType="numberDecimal" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/convertButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_weight="0"
+
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/buttonConverter"
+        app:icon="@drawable/thermostat"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/temperatureInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/temperatureInput"
+        app:layout_constraintTop_toTopOf="@+id/temperatureInput" />
+
+    <RadioGroup
+        android:id="@+id/temperatureTypesButtonGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/temperatureInput"
+        app:layout_constraintStart_toStartOf="@id/temperatureInput"
+        app:layout_constraintTop_toBottomOf="@id/temperatureInput">
+
+        <RadioButton
+            android:id="@+id/celsiusRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/celsiusText" />
+
+        <RadioButton
+            android:id="@+id/fahrenheitRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fahrenheitText" />
+
+        <RadioButton
+            android:id="@+id/kelvinRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/kelvinText" />
+
+    </RadioGroup>
 
     <TextView
         android:id="@+id/temperatureOutput1"
@@ -47,53 +107,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/temperatureOutput1"
         app:layout_constraintVertical_bias="0.238" />
-
-    <ImageView
-        android:id="@+id/bannerTemperature"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:adjustViewBounds="false"
-        android:scaleType="fitXY"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/banner_temperature" />
-
-    <RadioButton
-        android:id="@+id/celsiusRadioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="16dp"
-        android:text="@string/celsiusText"
-        app:layout_constraintEnd_toStartOf="@id/fahrenheitRadioButton"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/temperatureInput" />
-
-    <RadioButton
-        android:id="@+id/fahrenheitRadioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/fahrenheitText"
-        app:layout_constraintTop_toBottomOf="@id/temperatureInput"
-        app:layout_constraintStart_toEndOf="@id/celsiusRadioButton"
-        app:layout_constraintEnd_toStartOf="@id/kelvinRadioButton"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="16dp"
-        tools:layout_editor_absoluteX="151dp"
-        tools:layout_editor_absoluteY="338dp" />
-
-    <RadioButton
-        android:id="@+id/kelvinRadioButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/kelvinText"
-        app:layout_constraintTop_toBottomOf="@id/temperatureInput"
-        app:layout_constraintStart_toEndOf="@id/fahrenheitRadioButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="16dp"
-        tools:layout_editor_absoluteX="261dp"
-        tools:layout_editor_absoluteY="339dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

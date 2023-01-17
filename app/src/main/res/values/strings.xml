@@ -4,4 +4,6 @@
     <string name="celsiusText">ºC</string>
     <string name="fahrenheitText">ºF</string>
     <string name="kelvinText">K</string>
+    <string name="tempConverterBannerDescription">Banner da tela de conversão de temperatura com a imagem de três termometros de parede antigos</string>
+    <string name="buttonConverter">Converter</string>
 </resources>
