@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".TemperatureConverterActivity">
 
     <ImageView
         android:id="@+id/bannerTemperature"
@@ -30,6 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/bannerTemperature">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/temperatureInputText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/input_text_temperature"
@@ -107,5 +108,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/temperatureOutput1"
         app:layout_constraintVertical_bias="0.238" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
